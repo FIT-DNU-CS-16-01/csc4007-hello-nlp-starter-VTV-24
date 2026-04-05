@@ -1,14 +1,13 @@
 # Lab0 — 1-page report (Hello NLP, random data)
 
 ## Pipeline đã chạy
-- Sinh dữ liệu text sentiment giả lập (random) → TF-IDF → LogisticRegression → evaluate.
+- Sinh dữ liệu tiếng Việt giả lập (positive/negative) → TF-IDF (ngram 1–2) → Logistic Regression → train/test split (80/20) → đánh giá.
 
 ## Kết quả
-- Xem `results/lab0_metrics.json` (accuracy, macro-F1, confusion matrix).
+- Accuracy = 1.0, Macro-F1 = 1.0; confusion matrix không có sai lệch (32/0, 0/28); vocab_size = 112.
 
 ## Vấn đề gặp phải + cách xử lý (ví dụ)
-- Quên activate conda env → chạy lại `conda activate csc4007-nlp`.
-- Lỗi cài package → nâng pip `python -m pip install -U pip`.
+- Gặp lỗi OMP (libiomp5md.dll conflict) khi import torch → xử lý bằng cách thiết lập biến môi trường KMP_DUPLICATE_LIB_OK và cấu hình lại môi trường conda để tránh xung đột thư viện.
 
 ## Ghi chú
-- Dữ liệu random chỉ để kiểm tra setup, không dùng để so sánh mô hình thật.
+- Dữ liệu được sinh ngẫu nhiên nên mô hình đạt kết quả hoàn hảo, chỉ nhằm mục đích kiểm tra pipeline và môi trường, không phản ánh hiệu năng thực tế.
